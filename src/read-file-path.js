@@ -1,6 +1,12 @@
 import fs from 'fs';
+import path from 'path';
 
-(() => {
-    console.log(1)
-    return 1
-})()
+function _getFilePath(dirPath) {
+    return path.isAbsolute(dirPath) ? dirPath : path.join(__dirname, dirPath);
+}
+
+export default {
+    readFilePathSync: readFilePathSync
+    // readFilPath: readFilePath
+    // readFilePathPromise: readFilePathPromise
+}
