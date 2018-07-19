@@ -50,7 +50,7 @@ let readFilePathSync = function(dirPath, options = {}) {
     return fileList;
 }
 
-export default {
+module.exports = {
     readFilePathSync: readFilePathSync
     // readFilPath: readFilePath [TDB]Plan to add in v 1.1.0
     // readFilePathPromise: readFilePathPromise [TDB]Plan to add in v 1.1.0
