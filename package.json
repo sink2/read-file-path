@@ -1,11 +1,12 @@
 {
   "name": "read-file-path",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Read all child directory and file path by given path.",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prepublish": "webpack --config webpack.babel.js"
+    "prepublish": "webpack --config webpack.babel.js",
+    "debug": "babel-node test/test.js"
   },
   "keywords": [
     "node",
@@ -21,5 +22,8 @@
     "babel-preset-es2015": "^6.24.1",
     "webpack": "^4.16.1",
     "webpack-cli": "^3.0.8"
+  },
+  "dependencies": {
+    "minimatch": "^3.0.4"
   }
 }
