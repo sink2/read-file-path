@@ -1,6 +1,6 @@
 {
   "name": "read-file-path",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Read all child directory and file path by given path.",
   "main": "lib/read-file-path.js",
   "scripts": {

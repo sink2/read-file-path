@@ -57,7 +57,7 @@ let readFilePathSync = function(dirPath, options = {}) {
     return fileList;
 }
 
-exports.modules =  {
+module.exports =  {
     readFilePathSync: readFilePathSync
     // readFilPath: readFilePath [TDB]Plan to add in v 2.1.0
     // readFilePathPromise: readFilePathPromise [TDB]Plan to add in v 3.1.0
@@ -138,7 +138,8 @@ let _reduceByExcludeFile = function(fileList, excludeRegexp) {
 
 let _reduceByIncludeDir = function(fileList, basePath, includeRegexp) {
     return fileList.reduce((list, filePath) => {
-        let relativePathList = path.dirname(filePath).split(path.join(basePath, '/'))[1].split(path.sep);
+        let relativePathList = path.dirname(filePath).split(path.join(basePath, '/')).length === 1 ?
+        [] : path.dirname(filePath).split(path.join(basePath, '/'))[1].split(path.sep);
         for (let i in relativePathList) {
             if (_isInclude(relativePathList[i], includeRegexp)) {
                 list.push(filePath);
@@ -152,7 +153,8 @@ let _reduceByIncludeDir = function(fileList, basePath, includeRegexp) {
 let _reduceByExcludeDir = function(fileList, basePath, excludeRegexp) {
     return fileList.reduce((list, filePath) => {
         let exclude = false;
-        let relativePathList = path.dirname(filePath).split(path.join(basePath, '/'))[1].split(path.sep);
+        let relativePathList = path.dirname(filePath).split(path.join(basePath, '/')).length === 1 ?
+        [] : path.dirname(filePath).split(path.join(basePath, '/'))[1].split(path.sep);
         for (let i in relativePathList) {
             if (_isExclude(relativePathList[i], excludeRegexp)) {
                 exclude = true;
