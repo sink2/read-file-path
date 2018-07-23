@@ -71,7 +71,3 @@ If 'exclude' is passed, will first ignore 'include' regexp and then ingore the '
 * excludeDir　`Default: []`  
 List of directory ignore regexp.  
 If 'exclude' is passed, will first ignore 'exclude' regexp and then ignore the 'excludeDir' regexp.
-* excludeDirChild　`Default: false`  
-Whether find exclude directory or not.  
-true : Will not search the exclude directory.  
-false: Will still search the exclude directory.  
