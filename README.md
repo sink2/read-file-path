@@ -13,7 +13,7 @@ npm install read-file-path
 
 ```js
 import readFilepath from 'read-file-path';
-readFilepath(path, options)
+let fileList = readFilepath.readFilePathSync(path, options)
 ```
 For Example:  
 
